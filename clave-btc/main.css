@@ -1,0 +1,141 @@
+@font-face {
+  font-family: gamelover;
+  src: url("./assets/letter.ttf");
+}
+
+body {
+  font-family: gamelover;
+  margin: 0;
+  padding: 0;
+}
+
+#app{
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+#restart {
+  display: none;
+  width: 5%;
+  position: absolute;
+  top: 1vh;
+  left: 93vw;
+  cursor: pointer;
+}
+
+#start-button {
+  font-family: gamelover;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  background: none;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+  padding: 10px;
+  animation-duration: 1.2s;
+  animation-name: hey;
+  animation-iteration-count: infinite;
+  outline: none;
+}
+
+@keyframes hey {
+  from {
+    border: solid black 2px;
+    color: black;
+  }
+
+  to {
+    border: solid white 2px;
+    color: white;
+  }
+}
+
+#initial-message {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  color: white;
+}
+
+.parent {
+  display: none;
+  width: 50%;
+  height: 60%;
+  grid-template-columns: repeat(4, 25%);
+  grid-template-rows: repeat(4, 25%);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+  }
+
+.child {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  cursor: move;
+  cursor: -webkit-grabbing;
+  border: solid 1px black;
+}
+
+.child img {
+  height: 100%;
+  width: 100%;
+  object-fit: fill;
+}
+
+.child:hover {
+  background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(20,164,0,0.1) 100%);
+}
+
+.seleccionado {
+  transform: scale(1.02);
+  box-shadow: 0px 0px 20px rgba(20,164,0,0.1);
+}
+
+.disabled {
+  cursor: no-drop;
+}
+
+.disabled:hover {
+  background-image: radial-gradient(circle, rgba(255,255,255,0) 0%, rgba(164, 0, 0, 0.1) 100%);
+}
+
+#clue {
+  display: none;
+  text-align: center;
+  color: white;
+}
+
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 680px) {
+
+  .parent {
+    display: none;
+    width: 80%;
+    height: 60%;
+    grid-template-columns: repeat(4, 25%);
+    grid-template-rows: repeat(4, 25%);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+  }
+
+  .child p {
+    font-size: 10px;
+  }
+
+  #restart {
+    display: none;
+    width: 10%;
+    position: absolute;
+    top: 1vh;
+    left: 87vw;
+    cursor: pointer;
+  }
+}
